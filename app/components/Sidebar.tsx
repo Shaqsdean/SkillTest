@@ -19,10 +19,10 @@ export default function Sidebar() {
             Dashboard
           </span>
         </Link>
-        <Link href="#">
+        <Link href="/#">
           <span
             className={`flex items-center gap-4 text-gray-700 hover:text-black font-medium ${
-              pathname === '#' ? 'text-black font-bold' : ''
+              pathname === '/skill-test' ? 'text-black font-bold bg-gray-200 rounded-lg p-2' : ''
             }`}
           >
             <FaLightbulb />

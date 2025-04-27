@@ -7,7 +7,7 @@ const data = [
   { name: 'Wrong', value: 5 },
 ];
 
-const COLORS = ['#3B82F6', '#fff3f6'];
+const COLORS = ['#3B82F6', '#EF4444'];
 
 export default function QuestionAnalysisPie() {
   return (
@@ -34,7 +34,7 @@ export default function QuestionAnalysisPie() {
             <Tooltip />
           </PieChart>
         </ResponsiveContainer>
-    
+        {/* Central icon or text */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
             <div className="text-2xl font-bold text-gray-700">🎯</div>

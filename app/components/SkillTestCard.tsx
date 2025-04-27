@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-export default function SkillTestCard() {
+export default function SkillTestCard({ onUpdatePercentile }: { onUpdatePercentile: (value: number) => void }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [rank, setRank] = useState(1);
   const [percentile, setPercentile] = useState(30);
@@ -16,13 +16,17 @@ export default function SkillTestCard() {
     setIsModalOpen(false);
   };
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
+  const handleFormSubmit = (st) => {
+    st.preventDefault();
+    const formData = new FormData(st.target);
+    const updatedPercentile = Number(formData.get('percentile'));
     setRank(Number(formData.get('rank')));
-    setPercentile(Number(formData.get('percentile')));
+    setPercentile(updatedPercentile);
     setCorrectAnswers(Number(formData.get('correctAnswers')));
     setIsModalOpen(false);
+
+    
+    onUpdatePercentile(updatedPercentile);
   };
 
   const currentDate = new Date().toLocaleDateString('en-US', {
@@ -69,11 +73,10 @@ export default function SkillTestCard() {
         </div>
       </div>
 
-      {/* Modal */}
+      
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg w-96 relative">
-            {/* HTML Logo in the top-right corner */}
             <img
               src="/html logo.png"
               alt="HTML5"
