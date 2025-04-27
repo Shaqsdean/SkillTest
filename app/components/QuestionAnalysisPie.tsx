@@ -7,7 +7,7 @@ const data = [
   { name: 'Wrong', value: 5 },
 ];
 
-const COLORS = ['#3B82F6', '#EF4444'];
+const COLORS = ['#3B82F6', '#f5f5f5'];
 
 export default function QuestionAnalysisPie() {
   return (
