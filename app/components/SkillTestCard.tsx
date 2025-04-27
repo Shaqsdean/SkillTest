@@ -13,7 +13,7 @@ export default function SkillTestCard() {
         </div>
         <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">Update</button>
       </div>
-      <div className="flex gap-12">
+      <div className="flex gap-12 mb-6">
         <div>
           <p className="text-gray-500 text-sm">Total Score</p>
           <p className="text-2xl font-bold">30%</p>
@@ -21,6 +21,24 @@ export default function SkillTestCard() {
         <div>
           <p className="text-gray-500 text-sm">Correct Answers</p>
           <p className="text-2xl font-bold">10/15</p>
+        </div>
+      </div>
+      {/* Horizontal Statistics Section */}
+      <div className="bg-gray-100 p-4 rounded-md">
+        <h3 className="text-lg font-semibold mb-4">Statistics</h3>
+        <div className="flex gap-12">
+          <div>
+            <p className="text-gray-500 text-sm">Rank</p>
+            <p className="text-2xl font-bold">1</p>
+          </div>
+          <div>
+            <p className="text-gray-500 text-sm">Rank Percentile</p>
+            <p className="text-2xl font-bold">75%</p>
+          </div>
+          <div>
+            <p className="text-gray-500 text-sm">Correct Answers</p>
+            <p className="text-2xl font-bold">10/15</p>
+          </div>
         </div>
       </div>
     </div>

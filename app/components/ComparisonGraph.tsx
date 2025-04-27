@@ -1,10 +1,10 @@
 'use client';
 
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, LabelList } from 'recharts';
 
 const data = [
   { name: 'You', score: 30 },
-  { name: 'Average', score: 60 },
+  { name: 'Average', score: 72 },
 ];
 
 export default function ComparisonGraph() {
@@ -13,12 +13,20 @@ export default function ComparisonGraph() {
       <h3 className="font-semibold text-lg mb-4">Comparison Graph</h3>
       <div className="h-64">
         <ResponsiveContainer width="100%" height="100%">
-          <BarChart data={data}>
+          <LineChart data={data}>
+            <YAxis type="number" domain={[0, 100]} />
             <XAxis dataKey="name" />
-            <YAxis />
             <Tooltip />
-            <Bar dataKey="score" fill="#3B82F6" radius={[6, 6, 0, 0]} />
-          </BarChart>
+            <Line
+              type="monotone"
+              dataKey="score"
+              stroke="#3B82F6"
+              strokeWidth={2}
+              dot={{ r: 6 }}
+            >
+              <LabelList dataKey="score" position="top" />
+            </Line>
+          </LineChart>
         </ResponsiveContainer>
       </div>
     </div>

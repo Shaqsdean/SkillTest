@@ -17,7 +17,15 @@ export default function SyllabusProgress() {
             <p className="text-sm text-gray-600 mb-1">{item.title}</p>
             <div className="w-full bg-gray-200 rounded-full h-3">
               <div
-                className="h-3 bg-blue-600 rounded-full transition-all duration-500"
+                className={`h-3 rounded-full transition-all duration-500 ${
+                  item.value > 95
+                    ? 'bg-green-400'
+                    : item.value > 80
+                    ? 'bg-cyan-400'
+                    : item.value > 50
+                    ? 'bg-orange-400'
+                    : 'bg-red-500'
+                }`}
                 style={{ width: `${item.value}%` }}
               />
             </div>
